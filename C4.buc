@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.contextFile org.eventb.core.configuration="org.eventb.core.fwd" org.eventb.texttools.text_lastmodified="1491914604093" org.eventb.texttools.text_representation="context C4 extends C2&#10;&#10;sets&#10;&#9;DOOR_STATUS&#10;&#10;constants&#10;&#9;open closed&#10;&#10;axioms&#10;&#9;@axm1 partition(DOOR_STATUS, {open}, {closed})&#10;&#10;end&#10;" version="3">
+<org.eventb.core.extendsContext name="'" org.eventb.core.target="C2"/>
+<org.eventb.core.carrierSet name="_c6DkAB60EeeaAbt6uRn7ow" org.eventb.core.identifier="DOOR_STATUS"/>
+<org.eventb.core.constant name="_c6DkAR60EeeaAbt6uRn7ow" org.eventb.core.identifier="open"/>
+<org.eventb.core.constant name="_c6DkAh60EeeaAbt6uRn7ow" org.eventb.core.identifier="closed"/>
+<org.eventb.core.axiom name="_c6DkAx60EeeaAbt6uRn7ow" org.eventb.core.label="axm1" org.eventb.core.predicate="partition(DOOR_STATUS, {open}, {closed})"/>
+</org.eventb.core.contextFile>

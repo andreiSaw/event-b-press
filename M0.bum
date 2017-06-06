@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<org.eventb.core.machineFile org.eventb.core.configuration="org.eventb.core.fwd" org.eventb.texttools.text_lastmodified="1491557248942" org.eventb.texttools.text_representation="machine M0 sees C0&#10;&#10;variables motor_actuator motor_sensor&#10;&#10;invariants&#10;  @inv1 motor_actuator∈STATUS&#10;  @inv2 motor_sensor∈STATUS&#10;&#10;events&#10;  event INITIALISATION&#10;    then&#10;      @act1 motor_actuator ≔ stopped&#10;      @act2 motor_sensor ≔ stopped&#10;  end&#10;&#10;  event treat_start_motor&#10;    where&#10;      @grd1 motor_actuator = stopped&#10;      @grd2 motor_sensor = stopped&#10;    then&#10;      @act1 motor_actuator ≔ working&#10;  end&#10;&#10;  event treat_stop_motor&#10;    where&#10;      @grd1 motor_actuator = working&#10;      @grd2 motor_sensor = working&#10;    then&#10;      @act1 motor_actuator ≔ stopped&#10;  end&#10;&#10;  event motor_start&#10;    where&#10;      @grd1 motor_actuator = working&#10;      @grd2 motor_sensor = stopped&#10;    then&#10;      @act1 motor_sensor ≔ working&#10;  end&#10;&#10;  event motor_stop&#10;    where&#10;      @grd1 motor_actuator = stopped&#10;      @grd2 motor_sensor = working&#10;    then&#10;      @act1 motor_sensor ≔ stopped&#10;  end&#10;end&#10;" version="5">
+<org.eventb.core.seesContext name="," org.eventb.core.target="C0"/>
+<org.eventb.core.event name="'" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="INITIALISATION">
+<org.eventb.core.action name="'" org.eventb.core.assignment="motor_actuator ≔ stopped" org.eventb.core.label="act1"/>
+<org.eventb.core.action name="(" org.eventb.core.assignment="motor_sensor ≔ stopped" org.eventb.core.label="act2"/>
+</org.eventb.core.event>
+<org.eventb.core.variable name="(" org.eventb.core.identifier="motor_actuator"/>
+<org.eventb.core.variable name=")" org.eventb.core.identifier="motor_sensor"/>
+<org.eventb.core.invariant name="*" org.eventb.core.label="inv1" org.eventb.core.predicate="motor_actuator∈STATUS"/>
+<org.eventb.core.invariant name="+" org.eventb.core.label="inv2" org.eventb.core.predicate="motor_sensor∈STATUS"/>
+<org.eventb.core.event name="-" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="treat_start_motor">
+<org.eventb.core.guard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="motor_actuator = stopped"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd2" org.eventb.core.predicate="motor_sensor = stopped"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="motor_actuator ≔ working" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="." org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="treat_stop_motor">
+<org.eventb.core.guard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="motor_actuator = working"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd2" org.eventb.core.predicate="motor_sensor = working"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="motor_actuator ≔ stopped" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="/" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="motor_start">
+<org.eventb.core.guard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="motor_actuator = working"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd2" org.eventb.core.predicate="motor_sensor = stopped"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="motor_sensor ≔ working" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+<org.eventb.core.event name="0" org.eventb.core.convergence="0" org.eventb.core.extended="false" org.eventb.core.label="motor_stop">
+<org.eventb.core.guard name="'" org.eventb.core.label="grd1" org.eventb.core.predicate="motor_actuator = stopped"/>
+<org.eventb.core.guard name="(" org.eventb.core.label="grd2" org.eventb.core.predicate="motor_sensor = working"/>
+<org.eventb.core.action name=")" org.eventb.core.assignment="motor_sensor ≔ stopped" org.eventb.core.label="act1"/>
+</org.eventb.core.event>
+</org.eventb.core.machineFile>
